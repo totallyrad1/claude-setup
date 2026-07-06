@@ -1,0 +1,5 @@
+# local tool caches
+.impeccable/
+
+# Windows download provenance junk
+*:Zone.Identifier
