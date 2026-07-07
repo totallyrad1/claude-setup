@@ -27,7 +27,7 @@ Repeat until the decision is made or clearly blocked:
 2. **Identify the tradeoff.** Reduce the choice to the tension underneath it: speed vs quality, optionality vs focus, simplicity vs power, reversibility vs confidence, autonomy vs control, short-term unblock vs long-term cost.
 3. **Separate the inputs.** List only the facts, assumptions, constraints, preferences, and unknowns that matter to this decision.
 4. **Recommend a default.** Give the answer you would choose if the user delegated the decision to you. Do not hide behind neutrality.
-5. **Ask the smallest question.** Ask only what is needed to collapse the remaining uncertainty. Prefer `AskQuestion` for clear answer spaces.
+5. **Ask the smallest question.** Ask only what is needed to collapse the remaining uncertainty. Prefer `AskUserQuestion` for clear answer spaces.
 6. **Loop or close.** If the answer unlocks the decision, close with the decision and rationale. If not, compress again and ask the next smallest question.
 
 ## Question Discipline
@@ -99,16 +99,16 @@ Use these filters to compress faster:
 - **Preference vs fact:** Do not research a preference. Ask for it directly.
 - **Constraint vs assumption:** Challenge constraints that may only be inherited habits.
 
-## Use of AskQuestion
+## Use of AskUserQuestion
 
-Use `AskQuestion` when choices are discrete and the user should not have to type a custom response. Good option sets:
+Use `AskUserQuestion` when choices are discrete and the user should not have to type a custom response. Good option sets:
 
 - "Optimize for speed" vs "Optimize for maintainability" vs "Balance both"
 - "Let the agent decide" vs "Ask me first" vs "Escalate only high-risk choices"
 - "Ship now" vs "Polish first" vs "Cut scope"
 - "Reversible experiment" vs "Commit to direction" vs "Need more evidence"
 
-When using `AskQuestion`, keep labels short and include your recommendation in the prompt.
+When using `AskUserQuestion`, keep labels short and include your recommendation in the prompt.
 
 ## Anti-Patterns
 
