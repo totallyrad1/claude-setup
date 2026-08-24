@@ -9,10 +9,17 @@ My personal Claude Code config — CLAUDE.md rules, custom slash commands, and s
 | `CLAUDE.md` | Global instructions loaded in every session |
 | `RTK.md` | RTK token-killer docs (referenced by CLAUDE.md) |
 | `settings.json` | Claude Code settings (theme, model, effort). Safe, portable defaults — no hooks enabled by default |
-| `commands/` | Custom slash commands (`/frontend-design`, `/thermonuclear-review`, `/peel-the-question`) |
+| `commands/` | Custom slash commands (`/batch-review`, `/frontend-design`, `/thermonuclear-review`, `/peel-the-question`) |
 | `statusline-command.sh` | Optional status line script (cwd, git branch, RTK savings) |
 | `notify.sh` | Optional "Claude finished" desktop notification hook (WSL/Windows only) |
 | `examples/` | Sample project-level `CLAUDE.md` files |
+
+## Slash commands
+
+- **`/batch-review [batches] [PR ...]`** — reviews a PR (or a paired set of PRs, e.g. backend + frontend) through N *sequential* adversarial batches. Each batch is a fresh zero-context subagent reviewing the current state, including the fixes made after the previous batch, so later batches attack earlier fixes instead of rediscovering the same findings. Triage, fix, and verify happen between batches; it ends with a merge-vs-ship verdict. Never pushes or merges unless you ask.
+- **`/thermonuclear-review`** — single deep adversarial code-quality review.
+- **`/frontend-design`** — guidance for building distinctive, production-grade UI.
+- **`/peel-the-question`** — collapses a decision down to the real question and a recommended default.
 
 ## Setup on a new machine
 
